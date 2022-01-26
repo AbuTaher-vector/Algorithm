@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+    /*Given three positive integer n, x, y. The task is to print Greatest Common Divisor of
+
+    numbers formed by n repeating x times and number formed by n repeating y times. 
+
+    0 <= n, x, y <= 1000000000.
+     */
+    nn n=123,x=5,y=15;
+    nn t=__gcd(x,y);
+    while(t--) cout<<n;
+    cout<<nl;
+   
+}
