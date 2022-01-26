@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+
+    /* LCM(a,b) = a*b/GCD(a,b)
+       LCM(a,b,c) != a*b*c/GCD(a,b,c);
+    */
+   nn ar[5]={2,7,3,9,4};
+   nn lcm=ar[0];
+   for(nn i=1;i<5;i++) lcm=(ar[i]*lcm)/__gcd(ar[i],lcm);
+    cout<<lcm<<nl;
+
+}
