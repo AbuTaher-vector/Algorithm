@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+
+    /* gcd(a, b, c) = gcd(a, gcd(b, c)) 
+             = gcd(gcd(a, b), c) 
+             = gcd(gcd(a, c), b)
+    */
+   nn ar[5]={2,4,6,8};
+   nn GCD=ar[0];
+   for(nn i=1;i<4;i++) GCD=__gcd(ar[i],GCD); 
+    cout<<GCD<<nl;
+
+}
