@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+ll short_b(ll a,ss b)
+{
+    ll ans=0;
+    for(nn i=0;i<b.size();i++) ans=(ans*10+b[i]-'0')%a;
+        return ans;
+
+}
+int main()
+{
+    /*Given two numbers ‘a’ and ‘b’ such that (0 <= a <= 10^12 and b <= b < 10^250). 
+    Find the GCD of two given numbers
+
+    In the given problem, we can see that first number ‘a’ can be handled by long long int data type
+     but second number ‘b’ can not be handled by any int data type. 
+    Here we read second number as a string and we will try to make it less than and 
+    equal to ‘a’ by taking it’s modulo with ‘a’.
+     */
+
+    ll a=1221;
+    ss b="1234567891011121314151617181920212223242526272829";
+    ll b1=short_b(a,b);
+    cout<<__gcd(a,b1)<<nl;
+    // a must not be zero.
+}
