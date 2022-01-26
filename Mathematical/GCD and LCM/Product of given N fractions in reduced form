@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+    /*Given the Numerator and Denominator of N fractions. 
+    The task is to find the product of N fraction and output the answer in reduced form
+     */
+
+   nn n=4;
+   nn num[4]={1,2,5,9};
+   nn den[4]={2,1,6,27};
+   nn N=1,D=1;
+   for(nn i=0;i<4;i++) N*=num[i];
+    for(nn i=0;i<4;i++) D*=den[i];
+        cout<<N/__gcd(N,D)<<"/"<<D/__gcd(N,D)<<nl;
+}
