@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+   
+     /*
+     Given two numbers n and k, print k-th prime factor among all prime factors of n. For 
+     example, if the input number is 15 and k is 2, then output should be “5”. 
+     And if the k is 3, then output should be “-1” (there are less than k prime factors). 
+     */
+
+     nn n=225,k=2;
+     vector<nn>v;
+     while(n%2==0)
+     {
+          v.push_back(2);
+          n/=2;
+     }
+
+     for(nn i=3;i<=sqrt(n);i+=2)
+     {
+          while(n%i==0)
+          {
+               v.push_back(i);
+               n/=i;
+          }
+     }
+     if(n>2) v.push_back(n);
+     if(v.size()<=k) cout<<-1<<nl;
+     else cout<<v[k-1]<<nl;
+   
+
+
+}
