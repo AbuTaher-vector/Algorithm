@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+ const nn n=1e7;
+vector<nn>adj[n];
+int main()
+{
+    vector<nn>visit(n,0);
+    
+     nn x,y,a,b;
+     cin>>x>>y;// x is the number of nodes and y is the number of edges.
+     while(y--)
+     {
+
+          cin>>a>>b;
+          adj[a].push_back(b);
+           adj[b].push_back(a);// since this is a bidirectional graph that is why we put a and b with both.
+
+     }
+     queue<nn>node;
+     node.push(1);
+     visit[1]++;
+     while(!node.empty())
+     {
+          nn s=node.front();
+          node.pop();
+          cout<<s<<" ";
+          for(auto it=adj[s].begin();it!=adj[s].end();it++)
+          {
+               if(!visit[*it])
+               {
+                    visit[*it]++;
+                    node.push(*it);
+               }
+
+          }
+     }
+     cout<<nl;
+
+
+}
