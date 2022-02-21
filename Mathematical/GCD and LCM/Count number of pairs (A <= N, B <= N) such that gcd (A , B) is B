@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+     nn n,ans=0;
+     cin>>n;
+     for(nn i=1;i<=n;i++) ans+=(n/i);
+          cout<<ans<<nl;
+
+}
