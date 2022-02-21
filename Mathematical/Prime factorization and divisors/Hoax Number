@@ -1,0 +1,59 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+vector<nn>primefactor(nn n)
+{
+     vector<nn>p;
+     p.push_back(0);
+     while(n%2==0)
+     {
+          if(2!=p.back()) p.push_back(2);
+          n/=2;     
+     }
+     for(nn i=3;i<=sqrt(n);i+=2)
+     {
+           while(n%i==0)
+         {
+          if(i!=p.back()) p.push_back(i);
+          n/=i;     
+          }
+
+
+     }
+     if(n>2) p.push_back(n);
+     return p;
+
+}
+int main()
+{
+     /*
+     A Hoax Number is defined as a composite number, whose sum of digits is equal 
+     to the sum of digits of its distinct prime factors. It may be noted here that, 
+     1 is not considered a prime number,
+      hence it is not included in the sum of digits of distinct prime factors.
+     */
+     nn n=84;
+     nn prime_sum=0,digit_sum=0;
+     vector<nn>p=primefactor(n);
+     for(nn i=0;i<p.size();i++)
+     {
+          while(p[i]>0)
+          {
+               prime_sum+=(p[i]%10);
+               p[i]/=10;
+          }
+     }
+     while(n>0)
+     {
+          digit_sum+=(n%10);
+          n/=10;
+     }
+     if(prime_sum==digit_sum) cout<<"A Hoax Number"<<nl;
+     else cout<<"Not a Hoax number"<<nl;
+
+
+}
