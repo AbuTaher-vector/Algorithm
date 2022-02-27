@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+    /*An anagram of a string is another string that 
+    contains the same characters, only the order
+     of characters can be different. For example,
+      “abcd” and “dabc” are an anagram of each other.*/
+    ss a="geeksforgeeks",b="forgeeksgeeks";
+    sort(a.begin(),a.end());
+    sort(b.begin(),b.end());
+    if(a==b) cout<<"The two strings are anagram of each other"<<nl;
+    else cout<<"The two strings are not anagram of each other"<<nl;
+     
+}
