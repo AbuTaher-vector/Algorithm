@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+    vector<string>v={"cat", "dog", "tac", "god", "act", "gdo"};
+    vector<string>ans;
+    for(nn i=0;i<v.size()-1;i++)
+    {
+        ss x=v[i];
+        nn flag=0;
+        sort(x.begin(),x.end());
+        for(nn j=i+1;j<v.size();j++)
+        {
+             ss y=v[j];
+             sort(y.begin(),y.end());
+             if(x==y)
+             {
+                ans.push_back(v[j]);
+                flag++;
+                v[j]="";
+             }
+
+        }
+        if(flag) ans.push_back(v[i]);
+    }
+    for(auto x:ans) cout<<x<<" ";
+        cout<<nl;
+    
+     
+}
