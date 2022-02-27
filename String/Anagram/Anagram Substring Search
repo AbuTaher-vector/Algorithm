@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+      ss text = "BACDGABCDA";
+      ss pat = "ABCD";
+      sort(pat.begin(),pat.end());
+      nn k=pat.size();
+      k--;
+      for(nn i=0;i<text.size()-k;i++)
+      {
+            ss test=text.substr(i,k+1);
+            sort(test.begin(),test.end());
+            if(test==pat)
+            {
+                cout<<"Found at Index "<<i<<nl;
+            }
+      }
+
+}
