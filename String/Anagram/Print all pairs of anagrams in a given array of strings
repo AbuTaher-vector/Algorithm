@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+      vector<ss>v={"geeksquiz","geeksforgeeks", "abcd","forgeeksgeeks","zuiqkeegs"};
+      for(nn i=0;i<v.size()-1;i++)
+      {
+          ss x=v[i];
+          sort(x.begin(),x.end());
+          for(nn j=i+1;j<v.size();j++)
+          {
+              ss y=v[j];
+              sort(y.begin(),y.end());
+              if(x==y)
+              {
+                  cout<<v[i]<<" "<<v[j]<<nl;
+              }
+
+          }
+      }
+
+}
