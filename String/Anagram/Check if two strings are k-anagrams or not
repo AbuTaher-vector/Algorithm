@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+     ss a="geeks",b="eggkf";
+     nn k=1;
+     map<char,nn>mp;
+     for(nn i=0;i<a.size();i++) mp[a[i]]++;
+        nn cnt=0;
+        for(nn i=0;i<b.size();i++)
+        {
+             if(mp[b[i]]>0) mp[b[i]]--;
+             else cnt++;
+        }
+       if(cnt<=k) cout<<"Yes"<<nl;
+       else  cout<<"No"<<nl;
+
+
+     
+}
