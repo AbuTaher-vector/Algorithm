@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+     nn a=8,b=4;
+     ss x,y;
+     while(1)
+     {
+          if(a%2==0) x.push_back('0');
+          else x.push_back('1');
+          if(a==0) break;
+          a/=2;
+     }
+     while(1)
+     {
+          if(b%2==0) y.push_back('0');
+          else y.push_back('1');
+          if(b==0) break;
+          b/=2;
+     }
+     if(y.size()>x.size()) swap(x,y);
+     while(x.size()>y.size()) y.push_back('0');
+     sort(x.begin(),x.end());
+     sort(y.begin(),y.end());
+     if(x==y) cout<<"YES"<<nl;
+     else cout<<"NO"<<nl; 
+}
