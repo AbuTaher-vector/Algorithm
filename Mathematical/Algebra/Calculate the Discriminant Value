@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+    /* ax^2+bx+c=0 is a general quadratic polynomial of two degree
+     b^2-4ac is the discriminant.
+     If the discriminant is equal to zero then one solution is possible.
+     If the discriminant is positive then two solutions are possible.
+     If the discriminant is negative then no real solutions are possible.
+
+    */
+     nn a=20,b=30,c=10;
+     nn discriminant=(b*b)-4*a*c;
+     cout<<"The Discriminant is "<<discriminant<<" ";
+     if(discriminant==0) cout<<"And the equation has one root"<<nl;
+     if(discriminant>0) cout<<"And the equation has two roots"<<nl;
+     if(discriminant<0) cout<<"And there is not real solution"<<nl;
+    
+}
