@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+    /* we have given two vector A = a1 * i + a2 * j + a3 * k and B = b1 * i + b2 * j + b3 * k. 
+    Where i, j and k are the unit vector along the x, y and z directions.
+     Then dot product is calculated as dot product = a1 * b1 + a2 * b2 + a3 * b3
+     cross product = (a2 * b3 – a3 * b2) * i + (a3 * b1 – a1 * b3) * j + (a1 * b2 – a2 * b1) * k,
+      where [(a2 * b3 – a3 * b2), (a3 * b1 – a1 * b3), (a1 * b2 – a2 * b1)] are the coefficient of
+       unit vector along i, j and k directions.
+
+    */
+    vector<nn>a={3,-5,4},b={2,6,5};
+    cout<<"Dot product = "<<a[0]*b[0]+a[1]*b[1]+a[2]*b[2]<<nl;
+    cout<<"Cross product = "<<(a[1]*b[2]-b[1]*a[2])<<" "<<(a[2]*b[0]-a[0]*b[2])<<" "<<(a[0]*b[1]-b[0]*a[1])<<nl;
+
+
+    
+}
