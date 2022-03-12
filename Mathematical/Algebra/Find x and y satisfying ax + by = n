@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+    /* ax+by=n
+       by=(n-ax)
+       y=(n-ax)/b 
+    */
+
+    nn n=22,a=3,b=7;
+    for(nn i=0;i*a<=n;i++)
+    {
+        if((n-a*i)%b==0)
+        {
+            cout<<"x="<<i<<","<<"y="<<(n-a*i)/b<<nl;
+            return 0;
+        }
+    }
+    cout<<"No solution"<<nl;
+}
