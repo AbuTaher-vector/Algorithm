@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+    /*Let the given integers be x and y. The sign bit is 1 in negative numbers, and 0
+     in positive numbers. The XOR of x and y will have the sign bit as 1 iff they have opposite sign. In other words,
+     XOR of x and y will be negative number number iff x and y have opposite signs.
+
+     link : https://www.geeksforgeeks.org/detect-if-two-integers-have-opposite-signs/
+     */ 
+
+   nn x,y;
+   cin>>x>>y;
+   x=x^y;
+   if(x<0) cout<<"Yes,they have opposite signs"<<nl;
+   else cout<<"No,they have no opposite signs"<<nl;
+}
