@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+nn printbinary(nn x)
+{
+    nn cnt=0;
+    for(nn i=31;i>=0;i--) 
+        {
+            cout<<((x>>i) & 1);
+            if(((x>>i) & 1)) cnt++;
+        }
+        cout<<nl;
+        return cnt;
+}
+int main()
+{
+    nn n,x;
+    cin>>n;
+    nn cnt=printbinary(n);
+   cout<<cnt<<nl;
+}
