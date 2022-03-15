@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+    /*To add 1 to a number x (say 0011000111), flip all the bits after the rightmost
+     0 bit (we get 0011000000). 
+    Finally, flip the rightmost 0 bit also (we get 0011001000) to get the answer. 
+
+     link : https://www.geeksforgeeks.org/add-1-to-a-given-number/
+     */ 
+     
+     nn n;
+     cin>>n;
+     nn t=1;
+     while(n&t)
+     {
+         n=n^t;
+         t=t<<1;
+     }
+     n=n^t;
+     cout<<n<<nl;
+}
