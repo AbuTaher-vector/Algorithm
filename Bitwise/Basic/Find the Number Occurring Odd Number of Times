@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+
+
+    /*The Best Solution is to do bitwise XOR of all the elements. XOR of all 
+    elements gives us odd occurring elements. Please note that the XOR of two elements is
+     0 if both elements are the same and the XOR of a number x with 0 is x.
+
+     link : https://www.geeksforgeeks.org/find-the-number-occurring-odd-number-of-times/
+
+     */
+   vector<nn>v{2,3,5,4,5,2,4,3,5,2,4,4,2};
+   nn xr=0;
+   for(nn i=0;i<v.size();i++) xr^=v[i];
+    cout<<xr<<nl;
+}
