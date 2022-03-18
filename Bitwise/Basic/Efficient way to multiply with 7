@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+    /*We can multiply a number by 7 using bitwise operator. First left shift the number by 3
+     bits (you will get 8n) then
+     subtract the original numberfrom the shifted number and return the difference (8n – n).
+
+     Link :  https://www.geeksforgeeks.org/efficient-way-to-multiply-with-7/
+    */
+     nn n;
+     cin>>n;
+     cout<<((n<<3)-n)<<nl;
+}
