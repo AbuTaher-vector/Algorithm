@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+    /*A number n is a power of 4 if the following conditions are met. 
+   a) There is only one bit set in the binary representation of n (or n is a power of 2) 
+   b) The count of zero bits before the (only) set bit is even.
+   For example 16 (10000) is the power of 4 because there is only 
+   one bit set and count of 0s before the set bit is 4 which is even.
+
+   Link : https://www.geeksforgeeks.org/find-whether-a-given-number-is-a-power-of-4-or-not/
+    */
+    nn n,cnt=0;
+    cin>>n;
+    nn x=n;
+     if(n && !(n&(n-1)))
+     {
+        while(n>1)
+        {
+            cnt++;
+            n>>=1;
+        }
+        if(cnt%2==0) cout<<x<<" is a power of 4"<<nl;
+        else cout<<x<<" is not a power of 4"<<nl;
+     }
+     else cout<<x<<" is not a power of 4"<<nl;
+}
