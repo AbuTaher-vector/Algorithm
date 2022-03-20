@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int 
+#define ss string
+#define nl "\n"
+int main()
+{ 
+    /*The idea is to use bitwise <<, & and ~ operators. Using expression “~(1 << (k – 1))“, 
+    we get a number which has all bits set, except the k’th bit. If we do bitwise & of this 
+    expression
+     with n, we get a number which has all bits same as n except the k’th bit which is 0. 
+
+     link : https://www.geeksforgeeks.org/how-to-turn-off-a-particular-bit-in-a-number/
+
+     */
+     nn n,k;
+     cin>>n>>k;
+     cout<<(~(1<<(k-1)) & n)<<nl;  
+}
