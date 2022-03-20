@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int 
+#define ss string
+#define nl "\n"
+int main()
+{ 
+    /*
+
+     link : https://www.geeksforgeeks.org/find-xor-of-two-number-without-using-xor-operator/
+     */
+    nn a,b;
+    cin>>a>>b;
+    for(nn i=0;i<31;i++)
+    {
+        if(((a>>i)&1)==((b>>i)&1)) a=a & ~(1<<i);
+        else a=a | (1<<i);
+    }
+    cout<<a<<nl;
+
+     
+}
