@@ -1,0 +1,78 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int 
+#define ss string
+#define nl "\n"
+int main()
+{ 
+    /*Given two bit sequences as strings, write a function to return the addition of the
+     two sequences. Bit strings can be of different lengths also. For example, if string 
+    1 is “1100011” and second string 2 is “10”, then the function should return “1100101”.
+
+     link : https://www.geeksforgeeks.org/add-two-bit-strings/
+
+     */
+     string s;
+     ss a,b;
+     cin>>a>>b;
+      int x=a.size(),y=b.size();
+      if(x<y) swap(a,b);
+        reverse(a.begin(),a.end());
+         reverse(b.begin(),b.end());
+        char carry='0';
+        for(int i=0;i<b.size();i++)
+        {
+            if(a[i]!=b[i] && carry=='0')  s.push_back('1');
+            else if(a[i]!=b[i] && carry=='1') 
+             {
+                s.push_back('0');
+                carry='1';
+
+             }  
+             else if(a[i]==b[i])
+             {
+                  if(a[i]=='0')
+                  {
+                       if(carry=='0') s.push_back('0');
+                       else 
+                        {
+                            s.push_back('1');
+                            carry='0';
+                        }
+                  }
+                  else
+                  {
+                      if(carry=='0') s.push_back('0');
+                       else s.push_back('1');
+                       carry='1';
+                  } 
+             } 
+        }
+       for(int i=b.size();i<a.size();i++)
+       {
+            if(a[i]!=carry)
+            {
+                s.push_back('1');
+                if(carry=='1') carry='0';
+
+            }
+            else
+            {
+                  if(carry=='0') s.push_back('0');
+                  else
+                  {
+                        s.push_back('0');
+                        carry='1';
+
+                  }
+            }
+       }
+       if(carry=='1')  s.push_back('1');
+       reverse(s.begin(),s.end());
+       cout<<s<<nl;
+         
+
+
+}
