@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int 
+#define ss string
+#define nl "\n"
+int main()
+{ 
+    /*
+
+     link : https://www.geeksforgeeks.org/write-your-own-strcmp-which-ignores-cases/
+
+     */
+    ss a="GeekforGeeks",b="geekforgeeks";
+    nn k=a.size(),m=b.size();
+    if(k>m) cout<<1<<nl;
+    else if(k<m) cout<<-1<<nl;
+    else
+    {
+          nn i;
+          for(i=0;i<k;i++)
+          {
+              if(a[i]==b[i] || (a[i]^(1<<5))==b[i]) continue;
+              else break;
+          }
+
+          if(i==k) cout<<0<<nl;
+          else
+          {
+               if((a[i] | (1<<5)) < (b[i] | (1<<5))) cout<<-1;
+               else cout<<1<<nl;
+
+          }
+    }
+
+
+     
+}
