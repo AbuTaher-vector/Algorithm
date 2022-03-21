@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int 
+#define ss string
+#define nl "\n"
+int main()
+{ 
+    /*
+
+     link : https://www.geeksforgeeks.org/check-if-a-number-has-bits-in-alternate-pattern/
+     */
+
+    nn n;
+    cin>>n;
+    nn prev=(n&1);
+    while(n)
+    {
+        if(((n>>1)&1)==prev)
+        {
+            cout<<"No"<<nl;
+            return 0;
+        }
+        n>>=1;
+        prev=(n&1);
+
+    }
+    cout<<"Yes"<<nl;
+
+     
+}
