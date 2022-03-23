@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int 
+#define ss string
+#define nl "\n"
+int main()
+{ 
+   /*
+   Link: https://www.geeksforgeeks.org/xor-two-numbers-making-length-binary-representations-equal/
+   */
+
+   nn a,b;
+   cin>>a>>b;
+   if(a<b) swap(a,b);
+   nn x=a,y=b,cnta=0,cntb=0;
+   while(x)
+   {
+    cnta++;
+    x>>=1;
+
+   } 
+   while(y)
+   {
+      cntb++;
+      y>>=1;
+
+   }
+   b=b<<abs(cnta-cntb);
+   cout<<(a^b)<<nl; 
+
+}
