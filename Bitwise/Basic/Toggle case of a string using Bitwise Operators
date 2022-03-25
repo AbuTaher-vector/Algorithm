@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int 
+#define ss string
+#define nl "\n"
+int main()
+{
+    /*
+       https://www.geeksforgeeks.org/toggle-case-string-using-bitwise-operators/
+    */
+    ss s="GeekSfOrgEEKs";
+    for(nn i=0;i<s.size();i++)
+    {
+        if(((s[i]>>5) & 1)) s[i]=(s[i] & ~(1<<5));
+        else s[i]=(s[i] | (1<<5));
+    }
+    cout<<s<<nl;
+
+}
