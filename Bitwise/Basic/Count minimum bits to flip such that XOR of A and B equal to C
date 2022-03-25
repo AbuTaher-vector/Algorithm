@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int 
+#define ss string
+#define nl "\n"
+int main()
+{
+   
+   /*https://www.geeksforgeeks.org/count-minimum-bits-flip-xor-b-equal-c/
+   */
+    nn n,cnt=0;
+    ss a,b,c;
+    cin>>n>>a>>b>>c;
+    for(nn i=0;i<n;i++)
+    {
+          if(a[i]==b[i] && c[i]=='1') cnt++;
+          else if(a[i]!=b[i] && c[i]=='0') cnt++;
+
+    } 
+     cout<<cnt<<nl;
+
+}
