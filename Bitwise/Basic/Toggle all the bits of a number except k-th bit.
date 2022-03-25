@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int 
+#define ss string
+#define nl "\n"
+int main()
+{
+    /*
+       link : https://www.geeksforgeeks.org/toggle-bits-number-except-k-th-bit/
+    */
+    unsigned n,k;
+    cin>>n>>k;
+    cout<<(~(n^(1<<k)))<<nl;
+    
+}
