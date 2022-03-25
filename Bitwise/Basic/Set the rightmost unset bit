@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int 
+#define ss string
+#define nl "\n"
+int main()
+{
+    /*
+       link : https://www.geeksforgeeks.org/set-rightmost-unset-bit/
+    */
+    nn n;
+    cin>>n;
+    if(n==0) cout<<0<<nl;
+    else
+    {
+        nn a=n;
+        nn cnt=0;
+        while(a)
+        {
+            cnt++;
+            a=a>>1;
+        }
+        if(pow(2,cnt)-1==n) cout<<n<<nl;
+        else
+        {
+            for(nn i=0;;i++)
+            {
+                if(!((n>>i)&1))
+                {
+                    n=n | (1<<i);
+                    break;
+                }
+            }
+            cout<<n<<nl;
+        }
+    }
+    
+}
