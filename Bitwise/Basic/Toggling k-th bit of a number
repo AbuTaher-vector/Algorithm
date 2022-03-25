@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int 
+#define ss string
+#define nl "\n"
+int main()
+{
+    /*
+       link : https://www.geeksforgeeks.org/toggling-k-th-bit-number/
+    */
+    nn n,k;
+    cin>>n>>k;
+    if(((n>>k-1)&1)) n=n & ~(1<<k-1);
+    else n=n | (1<<k-1);
+    cout<<n<<nl;
+
+}
