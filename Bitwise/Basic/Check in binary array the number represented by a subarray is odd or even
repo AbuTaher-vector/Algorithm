@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int 
+#define ss string
+#define nl "\n"
+int main()
+{
+    /*
+       link : https://www.geeksforgeeks.org/check-binary-array-number-represented-subarray-odd-even/
+    */
+   vector<nn>v={1,1,0,1};
+   nn l=1,r=3;
+   if(v[r]==1) cout<<"Odd"<<nl;
+   else cout<<"Even"<<nl;
+    
+}
