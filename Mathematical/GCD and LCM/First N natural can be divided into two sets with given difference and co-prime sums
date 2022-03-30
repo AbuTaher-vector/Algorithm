@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+/*
+https://www.geeksforgeeks.org/first-n-natural-can-be-divided-into-two-sets-with-given-difference-and-co-prime-sums/
+*/
+    ll n,m;
+    cin>>n>>m;
+    n=(n*(n+1))/2;
+    ll sum2=(n-m)/2;
+    ll sum1=n-sum2;
+    if(n<m) cout<<"NO"<<nl;
+    else
+    {
+        if(sum1+sum2==n && sum1-sum2==m && __gcd(sum1,sum2)==1) cout<<"YES"<<nl;
+        else cout<<"NO"<<nl;
+    }
+}
