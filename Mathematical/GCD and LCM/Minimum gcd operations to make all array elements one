@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+    /*
+    https://www.geeksforgeeks.org/minimum-gcd-operations-make-array-elements-one/
+
+    */
+    nn cnt=0;
+    vector<nn>v={8,10,12};
+    for(nn i=0;i<v.size();i++)
+    {
+        if(v[i]==1) cnt++;
+    }
+    if(cnt!=0) cout<<v.size()-cnt<<nl;
+    else
+    {
+        nn size=INT_MAX;
+        for(nn i=0;i<v.size();i++)
+        {
+            nn gcd=v[i];
+           
+           for(nn j=i+1;j<v.size();j++)
+           {
+               gcd=__gcd(gcd,v[j]);
+               if(gcd==1) size=min(size,j-i);
+
+           }
+        }
+        if(size==INT_MAX) cout<<-1<<nl;
+        else cout<<v.size()+size-1<<nl;
+    }
+}
