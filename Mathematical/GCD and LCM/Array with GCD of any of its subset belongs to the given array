@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+
+  /*
+  https://www.geeksforgeeks.org/array-gcd-subset-belongs-given-array/
+  */
+   nn n;
+   cin>>n;
+   vector<nn>v(n),a;
+   for(nn i=0;i<n;i++) cin>>v[i];
+    for(nn i=0;i<n-1;i++)
+    {
+        nn k=__gcd(v[i],v[i+1]);
+        nn x=lower_bound(v.begin(),v.end(),k)-v.begin();
+        if(v[x]==k)
+        {
+            a.push_back(v[i]);
+             a.push_back(k);
+
+        }
+        else
+        {
+            cout<<"No array can be build"<<nl;
+            return 0;
+        }
+    }
+    a.push_back(v[n-1]);
+    for(auto x:a) cout<<x<<" ";
+        cout<<nl;
+
+
+}
