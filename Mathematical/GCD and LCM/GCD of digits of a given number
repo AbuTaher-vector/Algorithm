@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+    /*
+    https://www.geeksforgeeks.org/gcd-digits-given-number/
+
+    */
+     nn n;
+     cin>>n;
+     nn gcd=n%10;
+     n/=10;
+     while(n>0)
+     {
+        gcd=__gcd(gcd,n%10);
+        n/=10;
+     }
+     cout<<gcd<<nl;
+}
