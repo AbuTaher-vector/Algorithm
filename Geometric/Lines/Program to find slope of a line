@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+  /*
+  https://www.geeksforgeeks.org/program-find-slope-line/
+    
+  */
+  dd x1,y1,x2,y2;
+  cin>>x1>>y1>>x2>>y2;
+  cout<<"Slope is "<<(y2-y1)/(x2-x1)<<nl;
+
+
+
+
+}
