@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+  /*
+  https://www.geeksforgeeks.org/check-line-passes-origin/
+    
+  */
+  ll x1,y1,x2,y2;
+  cin>>x1>>y1>>x2>>y2;
+   if((x1*(y2-y1))==(y1*(x2-x1))) cout<<"YES"<<nl;
+   else cout<<"NO"<<nl;
+
+
+
+
+}
