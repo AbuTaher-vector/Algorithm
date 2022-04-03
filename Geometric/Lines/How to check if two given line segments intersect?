@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int cross_vector(nn x1,nn y1,nn x2,nn y2,nn x3,nn y3)
+{
+  nn k=((x2-x1)*(y3-y1))-((x3-x1)*(y2-y1));
+  return k;
+
+}
+int main()
+{
+  /*
+  https://www.geeksforgeeks.org/check-if-two-given-line-segments-intersect/
+    
+  */
+  nn x1,y1,x2,y2,x3,y3,x4,y4;
+  cin>>x1>>y1>>x2>>y2>>x3>>y3>>x4>>y4;
+  nn a=cross_vector(x1,y1,x3,y3,x4,y4);
+  nn b=cross_vector(x2,y2,x3,y3,x4,y4);
+  nn c=cross_vector(x3,y3,x1,y1,x2,y2);
+  nn d=cross_vector(x4,y4,x1,y1,x2,y2);
+  if(a!=b && c!=d) cout<<"YES"<<nl;
+  else
+  {
+    if((a==0 && b==0) || (c==0 && d==0))
+    {
+      if(x3>=x1 && x3<=x2 && y3>=y1 && y3>=y2) cout<<"YES"<<nl;
+      else if(x4<=x2 && x4>=x1 && y4<=y2 && y4>=y1) cout<<"YES"<<nl;
+      else cout<<"NO"<<nl;
+    }
+    else cout<<"NO"<<nl;
+
+
+  }
+
+
+
+}
