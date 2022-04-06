@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+  /*https://www.geeksforgeeks.org/area-of-a-hexagon/*/
+  dd n;
+  cin>>n;
+  dd k=n/2;
+  dd h=sqrt((n*n)-(k*k));
+  dd ans=0.5*k*h;
+  cout<<12*ans<<nl;     
+}
