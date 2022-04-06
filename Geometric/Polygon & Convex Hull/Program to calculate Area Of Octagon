@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+/*https://www.geeksforgeeks.org/program-calculate-area-octagon/ */
+
+  dd n;
+  cin>>n;
+  cout<<2*n*n*(1+sqrt(2))<<nl;   
+}
