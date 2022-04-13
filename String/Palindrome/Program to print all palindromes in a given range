@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+     #ifndef ONLINE_JUDGE
+     freopen("input.txt", "r", stdin);
+     freopen("output.txt", "w", stdout);
+     #endif
+
+     /*https://www.geeksforgeeks.org/program-print-palindromes-given-range/*/
+     
+     nn left_range,right_range;
+     cin>>left_range>>right_range;
+     for(nn i=left_range;i<=right_range;i++)
+     {
+          ss s=to_string(i);
+          ss a=s;
+          reverse(a.begin(),a.end());
+          if(a==s) cout<<s<<" ";
+     }
+     cout<<nl;
+
+}
