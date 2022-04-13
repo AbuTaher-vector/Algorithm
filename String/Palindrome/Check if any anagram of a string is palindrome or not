@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+     #ifndef ONLINE_JUDGE
+     freopen("input.txt", "r", stdin);
+     freopen("output.txt", "w", stdout);
+     #endif
+     /*https://www.geeksforgeeks.org/check-anagram-string-palindrome-not/*/
+     ss s;
+     cin>>s;
+     map<char,nn>mp;
+     for(nn i=0;i<s.size();i++) mp[s[i]]++;
+          nn od=0;
+          for(auto it=mp.begin();it!=mp.end();it++) if((it->second)&1) od++;
+        if(od>1) cout<<"NO"<<nl;
+   else cout<<"YES"<<nl;
+
+
+}
