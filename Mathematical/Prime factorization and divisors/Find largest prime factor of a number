@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int main()
+{
+     #ifndef ONLINE_JUDGE
+     freopen("input.txt", "r", stdin);
+     freopen("output.txt", "w", stdout);
+     #endif
+
+     /*https://www.geeksforgeeks.org/find-largest-prime-factor-number/*/
+     ll n,ans;
+     cin>>n;
+     while(n%2==0)
+     {
+          ans=2;
+          n/=2;
+     }
+     while(n%3==0)
+     {
+          ans=3;
+          n/=3;
+     }
+     for(nn i=5;i<=sqrt(n);i+=6)
+     {
+          while(n%i==0)
+          {
+          ans=i;
+          n/=i;
+          }
+          while(n%(i+2)==0)
+          {
+          ans=(i+2);
+          n/=(i+2);
+          }
+
+     }
+     if(n>4) ans=n;
+     cout<<ans<<nl;
+
+}
