@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+void setup()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+     #ifndef ONLINE_JUDGE
+     freopen("input.txt", "r", stdin);
+     freopen("outputt.txt", "w", stdout);
+     #endif
+
+}
+int main()
+{
+     setup();
+     // https://www.geeksforgeeks.org/difference-of-two-large-numbers/
+      ss a,b;
+      cin>>a>>b;
+      reverse(a.begin(),a.end());
+      reverse(b.begin(),b.end());
+      nn carry=0;
+      if(a.size()<b.size()) swap(a,b);
+      ss ans;
+      nn i;
+      for(i=0;i<b.size();i++)
+      {
+                nn x=a[i]-'0',y=b[i]-'0';
+                if(carry) y+=carry;
+               if(x>=y) ans.push_back((x-y)+'0'),carry=0;
+                else ans.push_back((10+x-y)+'0'),carry=1;
+                    
+
+      }
+      for(;i<a.size();i++)
+      {
+               nn x=a[i]-'0';
+               if(x>=carry) ans.push_back((x-carry)+'0'),carry=0;
+                else ans.push_back((10+x-carry)+'0'),carry=1;
+
+                    
+
+      }
+      reverse(ans.begin(),ans.end());
+    cout<<ans<<nl;
+
+}
