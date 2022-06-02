@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+int factorial(int n)
+{
+      nn a=1;
+      for(nn i=2;i<=n;i++) a*=i;
+      return a;
+}
+int main()
+{
+     #ifndef ONLINE_JUDGE
+     freopen("input.txt", "r", stdin);
+     freopen("outputt.txt", "w", stdout);
+     #endif
+     nn n,r;
+     cin>>n>>r;
+     nn x=factorial(n)/(factorial(r)*factorial(n-r));
+     cout<<x<<nl;   
+}
