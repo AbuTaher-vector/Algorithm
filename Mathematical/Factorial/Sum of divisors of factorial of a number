@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define nn int
+#define dd double
+#define ll long long int
+#define ss string
+#define nl '\n'
+nn factor(nn x)
+{
+   nn a=1;
+   for(nn i=2;i<=x;i++) a*=i;
+      return a;
+}
+nn div(nn k){
+
+    nn a=0;
+    for(nn i=1;i<=sqrt(k);i++)
+    {
+      if(k%i==0)
+      {
+          a+=i;
+          if(k/i!=i) a+=(k/i);
+      }
+    }
+    return a;
+}
+int main()
+{
+     ios_base::sync_with_stdio(0); cin.tie(0);
+     #ifndef ONLINE_JUDGE
+     freopen("input.txt", "r", stdin);
+     freopen("outputtt.txt", "w", stdout);
+     #endif
+     //https://www.geeksforgeeks.org/sum-divisors-factorial-number/
+     nn n=6;
+     nn k=factor(n);
+     nn ans=div(k);
+     cout<<ans<<nl;
+}
