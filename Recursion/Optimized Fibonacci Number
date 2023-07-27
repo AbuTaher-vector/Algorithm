@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 55;
+bool is_computed[N];
+int arr[N];
+int fib(int n){
+	if(n==0) return 0;
+	if(n==1) return 1;
+	if(is_computed[n]) return arr[n];
+     arr[n] = fib(n-1)+fib(n-2);
+     is_computed[n] = true;
+     return arr[n];
+}
+int main(){
+ int n;
+ cin>>n;
+ cout<<fib(n)<<"\n";
+}
