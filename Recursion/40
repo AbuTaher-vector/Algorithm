@@ -1,0 +1,30 @@
+class Solution {
+public:
+    void find(int i,int n,vector<int>c,vector<int>&v,vector<vector<int>>&ans,int &sum,int t){
+        if(sum==t){
+            ans.push_back(v);
+            return;
+        }
+        if(sum>t) return;
+        int prev = -1;
+        for(int j=i;j<n;j++){
+            if(c[j]==prev) continue;
+            sum+=c[j];
+            v.push_back(c[j]);
+            find(j+1,n,c,v,ans,sum,t);
+            sum-=c[j];
+            v.pop_back();
+            prev=c[j];
+            
+        }
+    }
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        sort(candidates.begin(),candidates.end());
+        int n = candidates.size();
+        vector<vector<int>>ans;
+        vector<int>v;
+        int sum=0;
+        find(0,n,candidates,v,ans,sum,target);
+        return ans;
+    }
+};
