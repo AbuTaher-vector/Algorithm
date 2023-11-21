@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+void printArray(int ind,vector<int>&v,vector<int>&ds,int n){
+    if(ind == n){
+        for(auto x:ds) cout<<x<<" ";
+        if(ds.size()==0) cout<<"{}";
+        cout<<"\n";
+        return;
+    }
+    ds.push_back(v[ind]);
+    printArray(ind+1,v,ds,n);
+    ds.pop_back();
+    printArray(ind+1,v,ds,n);
+}
+int main(){
+      int n;
+      cin>>n;
+      vector<int>v(n);
+      vector<int>ds;
+      for(int i=0;i<n;i++) cin>>v[i];
+      printArray(0,v,ds,n);
+}
