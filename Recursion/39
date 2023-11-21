@@ -1,0 +1,25 @@
+class Solution {
+public:
+    void find(int ind,int n,vector<int>a,int t,vector<int>&v,vector<vector<int>>&ans,int &sum){
+        if(sum==t){
+            ans.push_back(v);
+            return;
+        }
+        if(sum>t) return;
+        if(ind==n) return;
+        sum+=a[ind];
+        v.push_back(a[ind]);
+        find(ind,n,a,t,v,ans,sum);
+        sum-=a[ind];
+        v.pop_back();
+        find(ind+1,n,a,t,v,ans,sum);
+    }
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        int n = candidates.size();
+        vector<int>v;
+        vector<vector<int>>ans;
+        int sum=0;
+        find(0,n,candidates,target,v,ans,sum);
+        return ans;
+    }
+};
