@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+void printArray(int ind,vector<int>&v,vector<int>&ds,int n,int sum,int k){
+    if(sum==k){
+         for(auto x:ds) cout<<x<<" ";
+          cout<<"\n";
+        return;
+    }
+    if(sum>k) return;
+    if(ind==n) return;
+    ds.push_back(v[ind]);
+    sum+=v[ind];
+    printArray(ind+1,v,ds,n,sum,k);
+    ds.pop_back();
+    sum-=v[ind];
+    printArray(ind+1,v,ds,n,sum,k);
+
+}
+int main(){
+      int n,k;
+      cin>>n>>k;
+      vector<int>v(n);
+      vector<int>ds;
+      int sum=0;
+      for(int i=0;i<n;i++) cin>>v[i];
+      printArray(0,v,ds,n,sum,k);
+}
