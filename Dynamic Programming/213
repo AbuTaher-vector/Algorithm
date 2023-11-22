@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int find(int ind,vector<int>&v,vector<int>&dp){
+        if(ind==0) return v[ind];
+        if(ind<0) return 0;
+        if(dp[ind]!=-1) return dp[ind];
+        int a = v[ind]+find(ind-2,v,dp);
+        int b = find(ind-1,v,dp);
+        return dp[ind] = max(a,b);
+    }
+    int rob(vector<int>& nums) {
+      if(nums.size()==1) return nums[0];
+      vector<int>a;
+      for(int i=1;i<nums.size();i++) a.push_back(nums[i]);
+      nums.pop_back();
+      vector<int>dp1(a.size()+1,-1),dp2(nums.size()+1,-1);
+      return max(find(a.size()-1,a,dp1),find(nums.size()-1,nums,dp2));
+      
+    }
+};
