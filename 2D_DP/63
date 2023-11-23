@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int find(int i,int j,vector<vector<int>>&v,vector<vector<int>>&dp,int n,int m){
+        if(v[i][j]==1) return dp[i][j]=0;
+        if(i==n-1 && j==m-1){
+            return dp[i][j]=1;
+        }
+        if(dp[i][j]!=-1) return dp[i][j];
+        int a=0,b=0;
+        if(i+1<n) a = find(i+1,j,v,dp,n,m);
+        if(j+1<m) b = find(i,j+1,v,dp,n,m);
+        return dp[i][j] = a+b;
+        
+    }
+    int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
+        int n = obstacleGrid.size();
+        int m = obstacleGrid[0].size();
+        vector<vector<int>>dp(n+1,vector<int>(m+1,-1));
+        return find(0,0,obstacleGrid,dp,n,m);
+    }
+};
