@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int find(int i,int prev,vector<int>&nums,vector<int>&dp){
+       if(i==nums.size()) return 0;
+       if(dp[prev+1]!=-1) return dp[prev+1];
+       int a = find(i+1,prev,nums,dp);
+       if(prev==-1 || nums[i]>nums[prev]){
+           a =max(a,1+find(i+1,i,nums,dp));
+       }
+        return dp[prev+1] = a;
+    }
+    int lengthOfLIS(vector<int>& nums) {
+        vector<int>dp(nums.size()+1,-1);
+        return find(0,-1,nums,dp);
+    }
+};
